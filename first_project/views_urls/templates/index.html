@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <h1>This is my first page</h1>
+    <h3>Yeayyy</h3>
+    <a href="{% url 'about' %}">link to about page</a>
+    <a href="{% url 'result' %}">link to result page</a>
+    <ul>
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+    </ul>
+    <form action="{% url 'result' %}">
+      {% csrf_token %}
+        <input type="text" name="user_input">
+        <input type="submit" value="Click me">
+    </form>
+
+    <img src="{% static 'flying.jpg' %}">
+    <button onclick="buttonClick()">Click me</button>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
+</body>
+</html>
